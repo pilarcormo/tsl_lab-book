@@ -17,6 +17,10 @@ Making a fragmented genome with SNP's in Ruby:
 
 Designing an algorithm that will determine the position of a phenotype altering mutant, based on SNP density of the fragments:
 
-	1. find_mutant_pos_snp_density_frags.rb - uses information from fasta and VCF files to work out the SNP density of each fragment in the fasta file, measured as SNPS per Kb.
+	1. find_mutant_pos_snp_density_frags.rb - uses information from fasta and VCF files to work out the SNP density of each fragment in the fasta file, measured as SNPS per Kb. Works regardless of the order of the fragments in the fasta file.
 
-	2.
+	Getting the fragments back into the correct order based on SNP density:
+
+		First experiment: compared the frag's in order of ascending density, to the original order.
+		Result: the order was very different as expected, because the orignial order is based on normal distribution of snps.
+				See - find_mutant_pos_snp_density_frags.rb - commit 'comparing densities4'

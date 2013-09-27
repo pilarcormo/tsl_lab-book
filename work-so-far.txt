@@ -1,0 +1,22 @@
+Work so far...
+
+fragmented_genome_with_snps repository
+--------------------------------------
+
+This is a model of a genome/chromosome/sequence from an individual created by the out-crossing of a mutant individual with non-mutants.
+There is a high SNP density near the mutant position due to linkage.
+The SNP density across this sequence follows a normal distribution, with the mutant position being located at 100,000 - the mid-point of this 200Kb sequence.
+The sequence is fragmented, after being created, into fragments of 50-250b length. This models typical NGS (Illumina) read sizes.
+
+Making a fragmented genome with SNP's in Ruby:
+
+	1. fragments_w_snps.rb - This generates the fragments described above. JSON files are created: one contains the fragments, another the SNP positions for each fragment.
+
+	2. json->fasta.rb - uses the information in the JSON files to construct a rudimentary fasta format file and VCF file.
+
+
+Designing an algorithm that will determine the position of a phenotype altering mutant, based on SNP density of the fragments:
+
+	1. find_mutant_pos_snp_density_frags.rb - uses information from fasta and VCF files to work out the SNP density of each fragment in the fasta file, measured as SNPS per Kb.
+
+	2.

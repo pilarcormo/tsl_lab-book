@@ -1,0 +1,16 @@
+30/09/13
+--------
+
+see find_mutant_pos_snp_density_frags.rb
+ commit: 'rearrangement methods'
+ repo: fragmented_genome_with_snps
+
+- Added a couple of rearrangement methods for the fragments:
+	#see file for method details#
+### METHOD 1: frags_by_density SCORE: 398,988	density order
+### METHOD 2: rearranged       SCORE: 585,252	even/odd method
+### METHOD 3: rearranged2      SCORE: 403,162	somehow worse
+
+- Method 3 didn't work as expected. I expected that moving the fragments with zero snps from the end of the original order, to the end, should give a higher score.
+
+- Looked up linear programming, still not found how to use this to rearrange my fragments by SNP density.

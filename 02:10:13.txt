@@ -1,0 +1,31 @@
+02/10/13
+--------
+
+see find_mutant_pos_snp_density_frags_m4.rb 
+
+ commit: 'rearrangement methods 3'
+ repo: fragmented_genome_with_snps
+
+I tried out more methods for rearranging the fragments (remember SCORE: 0 means the order is the same as original):
+
+### METHOD 9:  new_order 		     SCORE: 51,668 
+### METHOD 10: left_right_method3    SCORE: 42,972 
+### METHOD 11: snp_ids_density_order SCORE: 60,750 
+### METHOD 12: rearranged3			 SCORE: 56,212 
+
+- The above methods are the main ones I tried today. Since I have no way of rearranging the fragments with zero snps yet, I carried out methods for just the snp containing frags, compared against the order in vcf (unique only).
+
+- Method 11 is the new base marker, anything should do better than this.
+
+- See the file for more information on what each method does, suffice to say, they are all far from achieving the goal of rearranging the fragments into the correct order.
+
+- Method 9 and 10 rely on the information of whether each fragment has a higher number of snps on it's 'left' or 'right' hand side. This is used to determine which side of the centre, the frag should go in the order - (the normal distribution).
+The part of the code used to determine which frags go on the left or right is at lines 91-112:
+#this whole section would be unuseable as it relies on fasta_ids and fasta_lengths to determine left and right lists
+#you could try and write code to get left and right from the density order, but there would be little point now
+# - we have already seen that the left_right method is far from accurate
+
+Additional information:
+
+The fragments couldn't be assembled by overlapping, they don't overlap.
+

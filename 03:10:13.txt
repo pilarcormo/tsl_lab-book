@@ -1,0 +1,8 @@
+03/10/13
+--------
+
+- Tidied up working files:
+	see fragmented_genome_with_snps repository
+		commit: 'best versions 03/10/13'
+
+- ^Shortened one of the loops in fragments_w_snps.rb massively

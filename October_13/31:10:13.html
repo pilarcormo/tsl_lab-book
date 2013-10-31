@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>31/10/13</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>31/10/13</h1>
+
+<p>repo: <a href="https://github.com/edwardchalstrey1/fragmented_genome_with_snps">fragmented_genome</a></p>
+
+<p>see commits: 31/10/13</p>
+
+<h2>Today</h2>
+
+<ul>
+<li><p>Created scatter plot for SNP gradients of fragments</p></li>
+<li><p>Created example figure of gradient determination</p></li>
+</ul>
+
+<h2>Next</h2>
+
+<h3>Fragment rearragement</h3>
+
+<ol>
+<li><p>Observe the gradient graphs and decide what to do next:</p>
+
+<ul>
+<li>write up the making/reason for the above in <a href="https://github.com/edwardchalstrey1/fragmented_genome_with_snps/blob/master/writeup/p2_rearrangement_methods.md">rearrangement_p2</a></li>
+<li>comment on the two plots produced: write about how 2 peaks either side of the mean expected because flat gradient for middle frags with many snps</li>
+<li>have a think, based on the shape of the graph, how the left_right/skew method could potentially be improved: we assume that with real data, if the snps are normally distributed about the mutant position, then the gradients of frags would show a similar pattern: of course you may find that the fragment&#39;s are really not having noticeable skew&#39;s/gradients</li>
+<li>if the gradients are really random, perhaps create a 3rd dataset where the difference between break range and fragment size is even smaller: perhaps you could research the sizes of fragments used in snp calling experiments and the number of snps they would typically have, because higher number of snps means a more reliable gradient, <strong>each of your frags has a low number of snps because the frags are very small (read size not frag size)</strong></li>
+</ul></li>
+<li><p>Create a new skew method, if you have decided this is a good idea</p></li>
+<li><p>Try a linear programming based rearrangement method</p></li>
+<li><p>Way down the line: test different midpoints for your rearranged distribution to be around; this could be after you already have a rearrangement method that works when we know the midpoint is in the middle. Write a method that uses that rearrangement method multiple times, with different midpoints, to find the best one, and therefore estimate the mutant position.</p></li>
+</ol>
+
+<h3><a href="https://github.com/edwardchalstrey1/lit_review_snp_detection_calling">Literature review repo</a></h3>
+
+<ul>
+<li><p>Research any background for the work that I will eventually be doing, so that the person reading the review could understand my work after</p></li>
+<li><p>Carry on reading legget et al</p></li>
+</ul>
+
+</body>
+
+</html>
+

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>14/11/13</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>14/11/13</h1>
+
+<h2>Fragmented Genome:</h2>
+
+<h3>Today</h3>
+
+<ol>
+<li><p>Made <a href="https://github.com/edwardchalstrey1/fragmented_genome_with_snps/blob/master/arabidopsis_datasets/dataset6/figures/genome_kdens_snps.png">super scatter</a> that uses kernel density estimate for entire original order: where n makes the sections of the graph equivalent to the sub graphs.</p></li>
+<li><p>Made graphs of the other kind of <a href="https://github.com/edwardchalstrey1/fragmented_genome_with_snps/blob/master/arabidopsis_datasets/dataset6/figures/skew_scatter_abs_thresh.png">super scatter excluding threshold</a></p></li>
+<li><p>Sorted out <a href="https://github.com/edwardchalstrey1/fragmented_genome_with_snps/blob/master/bar_graph_scores.R">random_vector_Rcode, now called bar_graph_scores</a> for dataset 6, so you can include <a href="https://github.com/edwardchalstrey1/fragmented_genome_with_snps/blob/master/arabidopsis_datasets/dataset6/figures/rearrangement_methods.png">barplot</a> of scores in writeup</p></li>
+</ol>
+
+<h3>Next</h3>
+
+<ol>
+<li><p>Write up plots for dataset 6, comparing d6 and d2 original order plots</p>
+
+<ul>
+<li>Write up rearrangement methods for the <strong>average scores</strong> of multiple datasets for each method. For a few datasets. But figures from d6?</li>
+</ul></li>
+<li><p>Write up your findings from the super scatter graph</p>
+
+<ul>
+<li>Need to make it clear in writeup that for the super scatter, the fragments on axis in original order, but excluding fragments &lt; 6 SNPs</li>
+<li>Compare figures of K density estimate to SNPs per Kb (d_o)</li>
+<li>Remember the example gradient graphs are for frags with 6+ SNPS only. could this be a problem?</li>
+<li><a href="https://github.com/edwardchalstrey1/fragmented_genome_with_snps/blob/master/arabidopsis_datasets/dataset6/figures/genome_kdens_snps.png">super scatter</a> is all SNPs on genome, but only goes up to highest SNP</li>
+</ul></li>
+</ol>
+
+<h3>Later on</h3>
+
+<ol>
+<li><p>Make an improved skew method, if it looks like the skew is a good idea</p></li>
+<li><p>Make a linear programming rearrangement method</p></li>
+<li><p>Way down the line: test different midpoints for your rearranged distribution to be around; this could be after you already have a rearrangement method that works when we know the midpoint is in the middle. Write a method that uses that rearrangement method multiple times, with different midpoints, to find the best one, and therefore estimate the mutant position.</p></li>
+<li><p>Eventually you will need to modify density_method_testa.rb to work with any ARGV file, and of course the file containing the rearrangement/mutation locating algorithm, saving the files in an appropriate location</p></li>
+</ol>
+
+<h2>Literature Review</h2>
+
+<ul>
+<li><p>Read papers on the topics Dan has suggested</p></li>
+<li><p>Write appropriate sections, focusing on genetics as much as bioinformatics</p></li>
+</ul>
+
+</body>
+
+</html>
+

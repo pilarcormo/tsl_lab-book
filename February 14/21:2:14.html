@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>21/2/14</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>21/2/14</h1>
+
+<h3>This week</h3>
+
+<p>Prepared the genetic algorithm for use in the cluster. Resolved issue with algorithm quitting after many generations: each generation, the chances of permutation duplicates being in the new poulation increases. In the select method, the hash with permutations for keys is reduced in size when there are duplicates. To counteract this, extra random permutation(s) are added (one for each duplicate), but this is unlikely to affect the permutations that are actually selected. Running the algorithm to 100 generations with a population size of which 50 are selected got to the point where 18 random permutations were added. We can avoid all of this if we can remove the need for the &ldquo;leftover&rdquo; permutations (this should be possible by finding another way to make up the rest of a new population). Also, it might be better to identify and possibly remove the reason for there being duplicate permutations in the first place (i.e. one of the reproduction methods).</p>
+
+<h3>Next</h3>
+
+<p><strong>Get the project running on the cluster:</strong></p>
+
+<ul>
+<li><p>RinRuby and Bio are installed, <a href="http://jbowes.wordpress.com/2008/05/13/installing-ruby-gems-in-your-home-directory/">like this</a>, then gem install &ldquo;gem&rdquo;, but Bio-Samtools isn&#39;t, <a href="http://stackoverflow.com/questions/4304438/gem-install-failed-to-build-gem-native-extension-cant-find-header-files">error message</a>: </p>
+
+<p>Building native extensions.  This could take a while&hellip;
+  ERROR:  Error installing bio-samtools:
+  ERROR: Failed to build gem native extension.</p>
+
+<p>/usr/bin/ruby extconf.rb
+  mkmf.rb can&#39;t find header files for ruby at /usr/lib/ruby/ruby.h</p>
+
+<p>Gem files will remain installed in /usr/users/sl/chalstre/gems/gems/ffi-1.9.3 for inspection.
+  Results logged to /usr/users/sl/chalstre/gems/gems/ffi-1.9.3/ext/ffi_c/gem_make.out</p></li>
+<li><p>Installed ruby gems can&#39;t be required conventionally, so how?</p>
+
+<p>irb(main):001:0&gt; require &ldquo;rinruby&rdquo;</p>
+
+<p>LoadError: no such file to load &ndash; rinruby</p>
+
+<p>from (irb):1:in require&#39;</p>
+
+<p>from (irb):1</p>
+
+<p>from :0</p></li>
+</ul>
+
+<ol>
+<li><p>Test the GA for a variety of parameters, distributions and fragment sizes (datasets) on the cluster</p></li>
+<li><p>Make the changes to GATOC suggested above, also consider looking at the best recombinant, mutant and save in each generation to see which of these is contributing to the best</p></li>
+<li><p>Continue working with Circos, to come up with a way of visually representing how the algorithm has performed, in terms of fragment order correctness</p></li>
+</ol>
+
+<h3>Eventually</h3>
+
+<ol>
+<li><p>Understand maths behind peak finding, and use peak finding in R: add to GA</p></li>
+<li><p>Update README further with the &ldquo;Purpose of Project&rdquo; and &ldquo;Peak Finding&rdquo; sections</p></li>
+<li><p>Use rdoc, and do documentation for key ruby files.</p></li>
+<li><p>Make ruby <strong>gems</strong> for the project, a simple class with things like write_txt, my own genetic algorithm?</p></li>
+</ol>
+
+</body>
+
+</html>
+

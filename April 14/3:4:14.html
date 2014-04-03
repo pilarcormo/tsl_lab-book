@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>&frac34;/14</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>&frac34;/14</h1>
+
+<h3>Today</h3>
+
+<ul>
+<li>Run the genetic algorithm on small test dataset</li>
+<li>Written up results</li>
+</ul>
+
+<h3>Next</h3>
+
+<ol>
+<li><p>Update unit tests for GATOC, SNP_dist and ReformRatio. Run the others too.</p></li>
+<li><p>Minor things:</p>
+
+<ul>
+<li>Replace extra randoms with mutants?</li>
+<li>Make z a customizable paramter in evolve in GATOC</li>
+</ul></li>
+<li><p>Write code that will determine which method in GATOC is contributing most significantly to the improvements</p></li>
+<li><p>Write code that will compare the genomic positions of SNPs from permutations, with the actual positions in model (hm, ht and hyp)</p>
+
+<ul>
+<li>For the small dataset: If the positions are similar, when the contigs are ordered differently, this could support my idea that the postions end up being similar because of the simplicity of the model</li>
+<li>For the large dataset: If the positions are similar, when the contigs are ordered differently, then this is a big problem, as it will mean the ratio distribution can&#39;t be used to reorder contigs</li>
+<li>However, assuming this ^ isn&#39;t the case, then running the algorithm should get us to the only permutation that reforms the ratio (the correct one), but only if it can avoid local maxima</li>
+</ul></li>
+<li><p>Merge the test branch with master, then update README with correct info on how to run everything</p></li>
+<li><p>Run the algorithm on a full Arabidopsis chromosome 4 model in the cluster</p>
+
+<ul>
+<li>May need to parallelize the algorithm: perhaps use the parallel gem</li>
+</ul></li>
+<li><p>Update gg-plots to be single figures, with all metrics, but faceted, on same scale if possible (different colours for different metrics)</p>
+
+<ul>
+<li>Use this to evaluate results</li>
+</ul></li>
+<li><p>Find a suitable distribution for real EMS backcross experiment SNPs</p></li>
+<li><p>Write code that can separate homozygous and heterozygous SNPs from a VCF file from real data: add this to ReformRatio </p></li>
+</ol>
+
+<h3>Eventually</h3>
+
+<ol>
+<li><p>Understand maths behind peak finding, and use peak finding in R: add to GA</p></li>
+<li><p>Update README further with the &ldquo;Purpose of Project&rdquo; and &ldquo;Peak Finding&rdquo; sections</p></li>
+<li><p>Use rdoc, and do documentation for key ruby files.</p></li>
+<li><p>Make ruby <strong>gems</strong> for the project: GATOC and permutation metrics and a general genetic algorithm</p></li>
+</ol>
+
+</body>
+
+</html>
+

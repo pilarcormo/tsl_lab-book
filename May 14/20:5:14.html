@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>20/5/14</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>20/5/14</h1>
+
+<h3>This week</h3>
+
+<ul>
+<li>SNP distribution plots can now be made after the algorithm has run with <a href="https://github.com/edwardchalstrey1/fragmented_genome_with_snps/blob/master/distribution_plots.rb">distribution_plots.rb</a></li>
+<li>Type and fitness scores of permutations in each generation can now be viewed in command line with <a href="https://github.com/edwardchalstrey1/fragmented_genome_with_snps/blob/master/view_table_data.rb">view_table_data.rb</a></li>
+</ul>
+
+<h3>Next</h3>
+
+<ol>
+<li><p>Add algorithm quit condition: linear regression of the best fitness from last 5 generations, gradient below a certain threshold</p></li>
+<li><p>Ask Martin to help with sorting out reason for R memory usage problem - looking at current cluster runs</p></li>
+<li><p>Add near swap method to PMeth - adjacent objects swap position. Add this into genetic algorithm</p></li>
+<li><p>Run some more instances of the algorithm in the cluster</p></li>
+<li><p>Change all unit tests to use setup method with instance variables</p></li>
+<li><p><strong>Find a suitable distribution for real EMS backcross experiment SNPs</strong></p></li>
+<li><p>Write code that can separate homozygous and heterozygous SNPs from a VCF file from real data: add this to ReformRatio</p></li>
+</ol>
+
+<h3>Extra analysis</h3>
+
+<ol>
+<li><p>(not essential) - fix code for making plot of which reproduction method works best, test on small_dataset2 results (use unit tests)</p></li>
+<li><p>Update gg-plots to be single figures, with all metrics, but faceted, on same scale if possible (different colours for different metrics)</p></li>
+</ol>
+
+<h3>Eventually</h3>
+
+<ol>
+<li><p>Understand maths behind peak finding, and use peak finding in R: add to GA</p></li>
+<li><p>Update README further with the &ldquo;Purpose of Project&rdquo; and &ldquo;Peak Finding&rdquo; sections</p></li>
+<li><p>Use rdoc, and do documentation for key ruby files.</p></li>
+</ol>
+
+</body>
+
+</html>
+
